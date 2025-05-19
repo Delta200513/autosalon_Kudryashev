@@ -1,4 +1,7 @@
 # Курсовая по теме: база данных для автосалона
+
+![image](https://github.com/user-attachments/assets/0ba3d969-9ba0-4c40-abb2-5f9b33a8fe7a)
+
 ---
 # Типовые запросы
 
