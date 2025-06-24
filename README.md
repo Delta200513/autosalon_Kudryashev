@@ -75,6 +75,8 @@ CALL AddCarModel('Tesla Model S', 1, 2024, 9500000.00, 3);
 **Пример триггера:**
 
 ```sql
+DELIMITER $$
+
 CREATE TRIGGER update_car_model_count
 AFTER INSERT ON car_models
 FOR EACH ROW
@@ -82,7 +84,10 @@ BEGIN
     UPDATE car_classes
     SET name = name -- тут можно добавить логику подсчёта или обновления статистики
     WHERE id = NEW.class_id;
-END //
+END$$
+
+DELIMITER ;
+
 ```
 
 *Триггер срабатывает после добавления новой модели автомобиля.*
@@ -100,7 +105,7 @@ BEGIN
     DECLARE cnt INT;
     SELECT COUNT(*) INTO cnt FROM car_models WHERE id = pid;
     RETURN cnt > 0;
-END //
+END
 ```
 
 ---
